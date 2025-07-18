@@ -27,7 +27,7 @@ class CustomerController extends Controller
     {
         $validator = Validator::make($request->all(), [
             "name" => "required|string",
-            "email" => "required|email",
+            "email" => "required|email|unique:users,email",
             "password" => "required|min:6",
             "role_select" => "required|in:user,admin"
         ]);
@@ -53,6 +53,7 @@ class CustomerController extends Controller
         return redirect()->route("login")->with("success", "You have registered successfully, please login from here");
 
     }
+
 
     public function loginForm()
     {
