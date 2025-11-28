@@ -18,7 +18,7 @@ class RoleAndPermissionSeeder extends Seeder
         Permission::create(['name' => 'edit-products']);
         Permission::create(['name' => 'delete-products']);
         Permission::create(['name' => 'create-order']);
-        Permission::create(['name' => 'delete-products']);
+        Permission::create(['name' => 'view-order']);
 
         $adminRole = Role::create(['name' => 'admin']);
         $userRole = Role::create(['name' => 'user']);
@@ -28,7 +28,7 @@ class RoleAndPermissionSeeder extends Seeder
             'edit-products',
             'delete-products',
             'create-order',
-            'delete-products'
+            'view-order'
         ]);
     }
 }
